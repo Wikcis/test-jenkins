@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Wikcis/test-jenkins'
-            }
-        }
 
         stage('Build and Test') {
             steps {
