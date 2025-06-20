@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Wikcis/test-jenkins.git'
+                git 'https://github.com/Wikcis/test-jenkins'
             }
         }
 
