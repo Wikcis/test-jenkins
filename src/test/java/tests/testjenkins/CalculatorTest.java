@@ -1,21 +1,38 @@
 package tests.testjenkins;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
+    private final Calculator calculator = new Calculator();
+
     @Test
-    void testAddition() {
-        Calculator calc = new Calculator();
-        int result = calc.add(2, 3);
-        assertEquals(5, result, "2 + 3 should equal 5");
+    public void testAdd() {
+        assertEquals(5, calculator.add(2, 3));
     }
 
     @Test
-    void ShouldReturnFalse() {
-        Calculator calc = new Calculator();
-        int result = calc.add(4, 3);
-        assertEquals(7, result, "4 + 3 should equal 7");
+    public void testSubtract() {
+        assertEquals(1, calculator.subtract(4, 3));
+    }
+
+    @Test
+    public void testMultiply() {
+        assertEquals(12, calculator.multiply(3, 4));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(2, calculator.divide(10, 5));
+    }
+
+    @Test
+    public void testDivideByZero() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.divide(10, 0);
+        });
+
+        assertEquals("Cannot divide by zero", exception.getMessage());
     }
 }
