@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8'   // lub inna wersja skonfigurowana w Jenkins > Tools
-        jdk 'JDK 17'         // skonfigurowany w Jenkins > Tools
+        maven 'Maven 3.9.10'
+        jdk 'JDK 17'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/twoje-repo/test-project.git'
+                git 'https://github.com/Wikcis/test-jenkins.git'
             }
         }
 
